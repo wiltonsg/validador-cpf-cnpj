@@ -42,16 +42,16 @@ if documento.__len__() == 11:
         digit2 = calculo
 
     if (digit1 == int(documento[9])) and (digit2 == int(documento[10]) and counter != 11):
-        print("CPF Válido")
+        print('{}.{}.{}-{}'.format(documento[0:3],documento[3:6],documento[6:9],documento[9:11]), 'CPF Válido')
     else:
-        print("CPF Inválido")
+        print('{}.{}.{}-{}'.format(documento[0:3],documento[3:6],documento[6:9],documento[9:11]),'CPF Inválido')
 
 # Início da verificação do CNPJ
 elif documento.__len__() == 14:
 
     documento = str(documento)
 
-    # Verificando o padrão de CNPJ invalidos  00.000.0O0/0000-00,  11.111.111/1111-11...
+    # Verificando o padrão de CNPJ invalidos  00.000.000/0000-00,  11.111.111/1111-11...
     counter = 0
     for x in documento:
         if x == documento[1]:
@@ -80,7 +80,7 @@ elif documento.__len__() == 14:
         digit2 = calculo
 
     if (digit1 == int(documento[12])) and (digit2 == int(documento[13]) and counter != 14):
-        print("CNPJ Válido")
+        print('{}.{}.{}/{}-{}'.format(documento[0:2],documento[2:5],documento[5:8],documento[8:12],documento[12:14]),'CNPJ Válido')
 
     else:
-        print("CNPJ Inválido")
+        print('{}.{}.{}/{}-{}'.format(documento[0:2],documento[2:5],documento[5:8],documento[8:12],documento[12:14]),'CNPJ Inválido')
